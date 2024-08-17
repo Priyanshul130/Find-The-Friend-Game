@@ -1,6 +1,7 @@
 #DEVELOPED BY <PRIYANSHUL SHARMA>
 # webpage priyanshul.is-a.dev
 
+
 import pygame,sys
 import time
 import random
@@ -15,7 +16,6 @@ pygame.display.set_caption("FIND THE FRIEND")
 
 screen=pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGHT))
 
-#def the player sprite start at 0,0
 class Player(pygame.sprite.Sprite):
     def __init__ (self):
         super().__init__()
