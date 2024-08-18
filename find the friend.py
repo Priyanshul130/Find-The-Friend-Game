@@ -90,7 +90,7 @@ def createPlayerTarget():
     player=Player()
     allSprites.add(player)
     #crate target and add to grp
-    target=Target()
+    target=Target() 
     allSprites.add(target)
     return player,target
 

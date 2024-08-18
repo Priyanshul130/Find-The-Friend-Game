@@ -10,7 +10,6 @@ pygame.init()
 
 screen=pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGHT))
 
-
 white=(255,255,255)
 red=(255,0,0)
 black=(0,0,0)
