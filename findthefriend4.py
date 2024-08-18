@@ -1,7 +1,7 @@
 import pygame,sys
 import time
 import random
-from pygame.locals import *# Import pygame.locals for easier access to key coordinates
+from pygame.locals import *
 
 
 SCREEN_WIDTH=900
@@ -10,7 +10,6 @@ pygame.init()
 
 
 screen=pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGHT))
-
 
 #colours
 white=(255,255,255)
