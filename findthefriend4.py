@@ -3,7 +3,6 @@ import time
 import random
 from pygame.locals import *
 
-
 SCREEN_WIDTH=900
 SCREEN_HEIGHT=700
 pygame.init()
@@ -11,20 +10,19 @@ pygame.init()
 
 screen=pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGHT))
 
-#colours
+
 white=(255,255,255)
 red=(255,0,0)
 black=(0,0,0)
 
-#init sound
+
 pygame.mixer.init()
-#setup the clock for decent frame rate
+
 clock=pygame.time.Clock()
-#init font
+
 my_font=pygame.font.SysFont("Times New Roman",50)
 small_font=pygame.font.SysFont("Times New Roman",20)
 
-#change the background
 def change_bg(img):
     background=pygame.image.load(img)
     bg=pygame.transform.scale(background,(SCREEN_WIDTH,SCREEN_HEIGHT))
@@ -32,41 +30,41 @@ def change_bg(img):
     pygame.display.set_caption("FIND THE FRIEND")
     pygame.display.update()
 
-#welcome screen
+
 def welcome_screen():
-    #sound
+   
     pygame.mixer.music.load("startsound.mp3")
     pygame.mixer.music.play(-1)
-    #background
+    
     change_bg("startscreen.jpg")
-    #aim
+  
     text=my_font.render("HELP TURTLE FIND STAR FISH!!",True,red)
     screen.blit(text,(100,70))
-    #rules
+    
     text=small_font.render("press space to start",True,white)
     screen.blit(text,(20,300))
-    #rule2
+  
     text=small_font.render("USE ARROW KEYS TO NAVIGATE",True,white)
     screen.blit(text,(20,325))
-    #rule3
+
     text=small_font.render("touching enemies will reduce your life",True,white)
     screen.blit(text,(20,350))
-    #rule4
+
     text=small_font.render("touching obstacle will relocate you",True,white)
     screen.blit(text,(20,375))
-    #rule5
+  
     text=small_font.render("press BACKSPACE to quit",True,white)
     screen.blit(text,(20,400))
     pygame.display.update()
 
-    #caputre events
+ 
     while 1:
         for event in pygame.event.get():
-            #if user clicks on x butten clase the game
+         
             if event.type==QUIT:
                 pygame.quit()
                 sys.exit()
-            #if user press space then start the game
+           
             elif event.type==KEYDOWN and (event.key==K_SPACE):
                 startGame()
                 return
@@ -331,5 +329,3 @@ print("GAME OVER")
 #pygame.mixer.init()
 #pygame.mixer.music.load("demon crying no.mp3")
 #pygame.mixer.music.play()
-
-
