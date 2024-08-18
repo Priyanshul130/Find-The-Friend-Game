@@ -95,7 +95,6 @@ def createPlayerTarget():
     return player,target
 
 
-
 def startGame():
     player,target=createPlayerTarget()
     createEnemy()
@@ -105,67 +104,3 @@ def startGame():
     pygame.display.update()
 #calling star game function
 startGame()
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-            
