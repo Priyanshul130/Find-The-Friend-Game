@@ -312,19 +312,20 @@ def startGame():
         enemy_grp.update()
         obstacle_grp.update()
         target.update()
-        #add background image
+        
         screen.blit(pygame.image.load("background.jpg"),(0,0))
-        #draw the life bar on screen
+      
         pygame.draw.rect(screen,red,(500,10,life*10,20))
         
-        #draw sprites
+        
         allSprites.draw(screen)
         pygame.display.update()
 
-#calling start game function
+
 welcome_screen()
 pygame.quit()
 print("GAME OVER")
 #pygame.mixer.init()
 #pygame.mixer.music.load("demon crying no.mp3")
 #pygame.mixer.music.play()
+
