@@ -1,3 +1,6 @@
+#DEVELOPED BY<PRIYANSHUL SHARMA>
+# Webpage Priyanshul.ia-a.dev
+
 import pygame,sys
 import time
 import random
