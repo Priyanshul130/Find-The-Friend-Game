@@ -84,7 +84,7 @@ class Enemy(pygame.sprite.Sprite):
         self.rect.y=random.randrange(SCREEN_HEIGHT)
    
         self.speed=random.randint(1,7)
-  =
+  
     def update (self):
         self.rect.move_ip(-self.speed, 0)
         if self.rect.right<0:
@@ -96,30 +96,29 @@ class Obstacle(pygame.sprite.Sprite):
         self.image=pygame.image.load(img).convert_alpha()
         self.image=pygame.transform.scale(self.image,(60,60))
         self.rect=self.image.get_rect()
-        #starting pos is random generated
+      
         self.rect.x=random.randrange(SCREEN_WIDTH)
         self.rect.y=random.randrange(SCREEN_HEIGHT)
-    #make the obstacle floate by moveing it randomly
-    #remove it when i pass the edge 
+ 
     def update (self):
         self.rect.move_ip(random.randint(-3,3),random.randint(-1,1))
         if self.rect.right<0:
             self.kill()
         
-#-----------------------------------------------------------------------
+
 
 enemies=["enemy1.png","enemy2.png","enemy3.png","enemy4.png"]
 obstacles=["obstacle1.png","obstacle2.png","obstacle3.png","obstacle4.png"]
 
 
 
-#create grp to hold sprite .
+
 enemy_grp=pygame.sprite.Group()
 obstacle_grp=pygame.sprite.Group()
 allSprites=pygame.sprite.Group()
 
 def createEnemy():
-    #create enemy and add to grp
+    
     newEnemy=Enemy(random.choice(enemies))
     enemy_grp.add(newEnemy)
     allSprites.add(newEnemy)
@@ -128,7 +127,7 @@ def createEnemy():
 
 
 def createObstacle():
-    #create obstacle and add to grp
+   
     newObstacle=Obstacle(random.choice(obstacles))
     obstacle_grp.add(newObstacle)
     allSprites.add(newObstacle)
@@ -137,10 +136,10 @@ def createObstacle():
 
 
 def createPlayerTarget():
-    #create player and add to grp
+  
     player=Player()
     allSprites.add(player)
-    #crate target and add to grp
+
     target=Target()
     allSprites.add(target)
     return player,target
@@ -150,7 +149,7 @@ def createPlayerTarget():
 
 def bounce (obj):
     pygame.mixer.music.load("bounce.mp3")
-    pygame.mixer.music.play()#for bounce and play the sound 
+    pygame.mixer.music.play()
     obj.rect.move_ip(random.randint(-30,30),random.randint(-30,30))
 
 def startGame():
