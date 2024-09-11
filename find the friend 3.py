@@ -149,20 +149,18 @@ def createPlayerTarget():
 
 
 
-#-----------------------------------------------------------------------
-#bounce
+
 def bounce (obj):
     pygame.mixer.music.load("bounce.mp3")
     pygame.mixer.music.play()#for bounce and play the sound 
     obj.rect.move_ip(random.randint(-30,30),random.randint(-30,30))
-#-----------------------------------------------------------------------
+
 def startGame():
-    #create user def event for adding a new enemy and obstacle
-    #raise event for ADD_ENEMY after 600ms
+   
     add_enemy=pygame.USEREVENT+1
     pygame.time.set_timer(add_enemy,600)
 
-    #raise event for ADD_OBSTACLE after 600ms
+   
     add_obstacle=pygame.USEREVENT+2
     pygame.time.set_timer(add_obstacle,1000)
     
@@ -170,45 +168,41 @@ def startGame():
     #createEnemy()
     #createObstacle()
 
-    #variable to maintane life
+ 
     life=20
     clock.tick(30)
-    #game loop
+ 
     while True:
-        #look at every event in the que
+      
         for event in pygame.event.get():
             
-            #did the user click the window cloase  button if yes stop the loop
             if event.type==QUIT:
                 return
             
-            #shoud we add a new enemy
+    
             elif event.type==add_enemy:
                 createEnemy()
             elif event.type==add_obstacle:
                 createObstacle()
-        #get the set of keys pressed and check for user input
+        
         pressed_keys=pygame.key.get_pressed()
         player.update(pressed_keys)
 
 
-        #check if any obstacle has collide with the player
+      
         if pygame.sprite.spritecollideany(player,obstacle_grp):
             bounce(player)
             
-        #check if enemy collaide with player
+     
         if pygame.sprite.spritecollideany(player,enemy_grp):
             bounce(player)
             life-=1
             if life==0:
                 return
-            
-            
-        #check if target  and payer collaide.
+          
         if pygame.sprite.collide_rect(player,target):
             return
         
-        #update the pos of uor enemy obstacle and target
         enemy_grp.update()
         obstacle_grp.update()
         target.update()
