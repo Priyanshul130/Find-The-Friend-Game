@@ -60,10 +60,10 @@ class Target(pygame.sprite.Sprite):
         self.rect=self.image.get_rect()
         self.rect.x=1
         self.rect.y=500
-        #this determine target has to move left or right
+       
         self.moveLeft=False
     def update (self):
-        #make target move left and right
+       
         if self.moveLeft:
             self.rect.move_ip(-2,0)
             if self.rect.x<=5:
