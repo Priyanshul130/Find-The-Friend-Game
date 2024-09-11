@@ -24,14 +24,13 @@ my_font=pygame.font.SysFont("Times New Roman",50)
 small_font=pygame.font.SysFont("Times New Roman",20)
 
 
-#def the player sprite start at 0,0
 class Player(pygame.sprite.Sprite):
     def __init__ (self):
         super().__init__()
         self.image=pygame.image.load("player.png").convert_alpha()
         self.image=pygame.transform.scale(self.image,(70,70))
         self.rect=self.image.get_rect()
-    #move the sprite based on key pressed
+ 
     def update(self,pressed_keys):
         if pressed_keys[K_UP]:
             self.rect.move_ip(0,-5)
