@@ -19,11 +19,10 @@ black=(0,0,0)
 pygame.mixer.init()
 
 clock=pygame.time.Clock()
-#init font
+
 my_font=pygame.font.SysFont("Times New Roman",50)
 small_font=pygame.font.SysFont("Times New Roman",20)
 
-#---------------------------------------------------------------------------
 
 #def the player sprite start at 0,0
 class Player(pygame.sprite.Sprite):
