@@ -72,8 +72,7 @@ class Target(pygame.sprite.Sprite):
             self.rect.move_ip(2,0)
             if self.rect.x>=SCREEN_WIDTH-50:
                 self.moveLeft=True
-#-----------------------------------------------------------------------
-#enemy sprite
+
 class Enemy(pygame.sprite.Sprite):
     def __init__ (self,img):
         super().__init__()
