@@ -79,13 +79,12 @@ class Enemy(pygame.sprite.Sprite):
         self.image=pygame.image.load(img).convert_alpha()
         self.image=pygame.transform.scale(self.image,(60,60))
         self.rect=self.image.get_rect()
-        #starting pos is random generated
+      
         self.rect.x=random.randrange(SCREEN_WIDTH)
         self.rect.y=random.randrange(SCREEN_HEIGHT)
-        #SPEED IS RANDOMLY GENERATED
+   
         self.speed=random.randint(1,7)
-    #move the enemy based on speed
-    #remove it when it pass the left edge of the screen
+  =
     def update (self):
         self.rect.move_ip(-self.speed, 0)
         if self.rect.right<0:
