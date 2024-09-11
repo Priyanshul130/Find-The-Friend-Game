@@ -16,9 +16,8 @@ white=(255,255,255)
 red=(255,0,0)
 black=(0,0,0)
 
-#init sound
 pygame.mixer.init()
-#setup the clock for decent frame rate
+
 clock=pygame.time.Clock()
 #init font
 my_font=pygame.font.SysFont("Times New Roman",50)
