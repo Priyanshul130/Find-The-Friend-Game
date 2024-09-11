@@ -89,8 +89,7 @@ class Enemy(pygame.sprite.Sprite):
         self.rect.move_ip(-self.speed, 0)
         if self.rect.right<0:
             self.kill()
-#-----------------------------------------------------------------------
-#obstacle sprite
+
 class Obstacle(pygame.sprite.Sprite):
     def __init__ (self,img):
         super().__init__()
