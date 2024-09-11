@@ -41,7 +41,7 @@ class Player(pygame.sprite.Sprite):
         if pressed_keys[K_RIGHT]:
             self.rect.move_ip(5,0)
 
-        #keep player on the screen
+       
         if self.rect.left < 0:
             self.rect.left = 0
         elif self.rect.right >SCREEN_WIDTH:
@@ -51,8 +51,7 @@ class Player(pygame.sprite.Sprite):
         elif self.rect.bottom >=SCREEN_HEIGHT:
             self.rect.bottom = SCREEN_HEIGHT
 
-#---------------------------------------------------------------------------
-#target sprite
+
 class Target(pygame.sprite.Sprite):
     def __init__ (self):
         super().__init__()
