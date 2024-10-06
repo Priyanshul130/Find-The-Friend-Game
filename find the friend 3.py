@@ -7,11 +7,7 @@ SCREEN_WIDTH=800
 SCREEN_HEIGHT=600
 pygame.init()
 pygame.display.set_caption("FIND THE FRIEND")
-
-
 screen=pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGHT))
-
-
 white=(255,255,255)
 red=(255,0,0)
 black=(0,0,0)
